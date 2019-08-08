@@ -66,8 +66,8 @@ func Crush(image []byte, speed int, compression png.CompressionLevel) (out []byt
 	}
 	defer attr.Release()
 
-	attr.SetMinPosterization(0)
-	fmt.Println("Set Min Posterization to 0")
+	attr.SetMinPosterization(4)
+	fmt.Println("Set Min Posterization to 4")
 	
 	err = attr.SetSpeed(speed)
 	if err != nil {
