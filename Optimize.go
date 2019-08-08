@@ -85,6 +85,9 @@ func Crush(image []byte, speed int, compression png.CompressionLevel) (out []byt
 	}
 	defer res.Release()
 
+	res.SetDitheringLevel(1)
+	fmt.Println("Set dithering level to 1 - Floyd-Steinberg error diffusion")
+	
 	rgb8data, err := res.WriteRemappedImage()
 	if err != nil {
 		return nil, fmt.Errorf("WriteRemappedImage: %s", err.Error())
